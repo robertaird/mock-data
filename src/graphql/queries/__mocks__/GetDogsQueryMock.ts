@@ -2,6 +2,7 @@ import type { MockedResponse } from '@apollo/client/testing';
 import { Factory } from 'fishery';
 import { faker } from '@faker-js/faker';
 import { Dogs, GET_DOGS } from '../GetDogsQuery';
+import { FetchResult } from '@apollo/client';
 
 type DogsData = {
   dogs: Dogs[];
@@ -16,20 +17,23 @@ export const DogFactory = Factory.define<Dogs>(({ sequence }) => {
     breed: faker.animal.dog(),
     color: faker.color.human(),
     name: faker.name.lastName(),
-    imageUrl: faker.image.imageUrl(640, 480, 'dogs', true),
+    imageUrl: faker.image.imageUrl(380, 200, 'dogs', true),
     isGoodBoy,
   };
 });
 
-export const createGetDogsResult = (amount = 5): DogsData => ({
-  dogs: DogFactory.buildList(amount),
+export const createGetDogsResult = (quantity = 5): DogsData => ({
+  dogs: DogFactory.buildList(quantity),
 });
 
 export const getDogsQueryResponse = (
-  amount?: number
-): MockedResponse<DogsData> => ({
+  quantity?: number
+): MockedResponse<DogsData> & { result: FetchResult<DogsData> } => ({
   request: {
     query: GET_DOGS,
+    variables: {
+      quantity,
+    },
   },
-  result: { data: createGetDogsResult(amount) },
+  result: { data: createGetDogsResult(quantity) },
 });

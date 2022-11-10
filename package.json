@@ -11,9 +11,6 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.13",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.31",
     "@types/react": "^18.0.8",
@@ -34,6 +31,9 @@
   "version": "1.0.0",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.4.3",
     "@types/uuid": "^8.3.4",
     "prettier": "^2.7.1"
   },
