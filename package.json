@@ -27,7 +27,7 @@
   "description": "",
   "license": "ISC",
   "main": "index.js",
-  "name": "mock-service-worker",
+  "name": "mock-data",
   "version": "1.0.0",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

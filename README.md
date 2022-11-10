@@ -1,3 +1,13 @@
+# Mocking Data For Testing and Development
+
+Demo React app for using fake data in both testing & development, utilizing [msw](https://github.com/mswjs/msw) and [@faker-js/faker](https://github.com/faker-js/faker).
+
+To enable msw in development, create a `.env.development.local` file with the following variable:
+
+```
+REACT_APP_MOCK_API=true
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
