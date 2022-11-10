@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { App } from './pages';
-import { AppApolloProvider } from './providers';
+import { AppApolloProvider, ThemeProvider } from './providers';
 import reportWebVitals from './reportWebVitals';
 
 if (process.env.REACT_APP_MOCK_API) {
@@ -15,9 +15,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <AppApolloProvider>
-      <App />
-    </AppApolloProvider>
+    <ThemeProvider>
+      <AppApolloProvider>
+        <App />
+      </AppApolloProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
