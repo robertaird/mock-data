@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { Box, Button, TextField } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { GET_DOGS, Dogs as DogsType } from 'graphql/queries';
 import { ControlPanel } from './ControlPanel';
@@ -25,16 +24,29 @@ export const Dogs = () => {
         quantity={quantity}
         setQuantity={setQuantity}
       />
-      {data.dogs?.map(({ id, breed, color, imageUrl, name, isGoodBoy }) => (
-        <Dog
-          key={id}
-          breed={breed}
-          color={color}
-          imageUrl={imageUrl}
-          name={name}
-          isGoodBoy={isGoodBoy}
-        />
-      ))}
+      {data.dogs?.map(
+        ({
+          id,
+          breed,
+          color,
+          imageUrl,
+          name,
+          isGoodBoy,
+          description,
+          hairLength,
+        }) => (
+          <Dog
+            key={id}
+            breed={breed}
+            color={color}
+            description={description}
+            imageUrl={imageUrl}
+            name={name}
+            isGoodBoy={isGoodBoy}
+            hairLength={hairLength}
+          />
+        )
+      )}
     </Grid>
   );
 };

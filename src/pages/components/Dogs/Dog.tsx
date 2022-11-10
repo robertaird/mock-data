@@ -11,9 +11,11 @@ import {
 export const Dog = ({
   breed,
   color,
+  description,
   name,
   imageUrl,
   isGoodBoy,
+  hairLength,
 }: Partial<DogsType>) => (
   <Grid xs={6} md={4}>
     <Card sx={{ textAlign: 'left' }}>
@@ -44,7 +46,23 @@ export const Dog = ({
           display="flex"
           alignItems="center"
         >
-          Color: {color}{' '}
+          Color: {color}
+        </Typography>
+        <Typography
+          variant="body2"
+          component="div"
+          display="flex"
+          alignItems="center"
+        >
+          Hair length: {hairLength}cm
+        </Typography>
+        <Typography
+          variant="body2"
+          component="div"
+          display="flex"
+          alignItems="center"
+        >
+          {description}
         </Typography>
       </CardContent>
     </Card>

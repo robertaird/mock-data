@@ -8,6 +8,7 @@ export type Dogs = {
   description: string;
   name: string;
   imageUrl: string;
+  hairLength: number;
   isGoodBoy: boolean;
 };
 
@@ -21,6 +22,7 @@ export const GET_DOGS = gql`
       imageUrl
       isGoodBoy
       name
+      hairLength
     }
   }
 `;

@@ -17,6 +17,7 @@ export const DogFactory = Factory.define<Dogs>(({ sequence }) => {
     breed: faker.animal.dog(),
     color: faker.color.human(),
     name: faker.name.lastName(),
+    hairLength: faker.datatype.number(),
     imageUrl: faker.image.imageUrl(380, 200, 'dogs', true),
     isGoodBoy,
   };
